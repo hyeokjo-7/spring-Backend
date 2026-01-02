@@ -1,15 +1,7 @@
 package org.example.Head02_javaPrograming;
 
-public class gurwh {
+public class test {
     public static void main(String[] args) {
+
     }
 }
-
-
-
-
-
-
-
-
-
