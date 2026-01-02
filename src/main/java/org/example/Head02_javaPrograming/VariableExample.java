@@ -11,3 +11,4 @@ public class VariableExample {
         System.out.println("영업 여부: " + isOpen);
     }
 }
+
