@@ -10,7 +10,7 @@ public class ReferenceExample {
 
         // 참조 타입
         int[] arr1 = {1, 2, 3};
-//        int[] arr2 = arr1;
+        int[] arr2 = arr1;
 
         System.out.println(arr1[0]); // 100 (같은 객체 참조)
     }
