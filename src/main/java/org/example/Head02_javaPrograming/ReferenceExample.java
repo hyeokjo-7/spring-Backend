@@ -5,6 +5,7 @@ public class ReferenceExample {
         // 기본 타입
         int a = 10;
 //        int b = a;
+//        int = 수를 세는 단위
 
         System.out.println(a); // 10 (영향 없음)
 
