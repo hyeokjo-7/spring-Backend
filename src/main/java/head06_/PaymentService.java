@@ -1,5 +1,7 @@
 package head06_;
 
+import org.example.head03_oop.Order;
+
 public class PaymentService {
     private static final PaymentService INSTANCE = new PaymentService();
 
