@@ -1,4 +1,4 @@
-package head16_;
+package Head16_;
 
 public class Product {
     private String productId;
