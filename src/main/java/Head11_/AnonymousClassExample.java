@@ -26,3 +26,4 @@ public class AnonymousClassExample {
         listener.onEvent(eventData);
     }
 }
+//
