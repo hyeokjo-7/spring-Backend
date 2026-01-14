@@ -1,0 +1,58 @@
+package discodeit.JCF;
+
+import discodeit.Service.UserService;
+import discodeit.entity.User;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+public class JCFUserService implements UserService {
+    // 정보 저장소
+    private final List<User> data = new ArrayList<>();
+
+    // 정보를 다시 수집하여 재정의 할 수 있도록 Override
+    // 유저 객체를 생성
+
+    @Override
+    public User create(String name, String email, String phoneNumber) {
+        User user = new User(name, email, phoneNumber);
+        data.add(user);
+        return user;
+    }
+
+    @Override
+    public User find(UUID id) {
+        for (User user : data) {
+            if (user.getId().equals(id)){
+                return user;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public List<User> findAll() {
+        return data;
+    }
+
+    @Override
+    public User update(UUID id, String username, String email, String phoneNumber) {
+        User updateUser = find(id);
+
+        if (updateUser == null) {
+            System.out.println("유저가 존재하지 않습니다.");
+            return null;
+        }
+        updateUser.update(username, email, phoneNumber);
+        return updateUser;
+    }
+
+    @Override
+    public void delete(UUID id) {
+
+    }
+}
+
+
+
