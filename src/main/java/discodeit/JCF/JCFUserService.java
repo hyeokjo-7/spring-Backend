@@ -24,7 +24,7 @@ public class JCFUserService implements UserService {
     @Override
     public User find(UUID id) {
         for (User user : data) {
-            if (user.getId().equals(id)){
+            if (user.getId().equals(id)) {
                 return user;
             }
         }
@@ -37,22 +37,29 @@ public class JCFUserService implements UserService {
     }
 
     @Override
-    public User update(UUID id, String username, String email, String phoneNumber) {
-        User updateUser = find(id);
-
-        if (updateUser == null) {
+    public User update(UUID id, String name, String email, String phoneNumber) {
+        User User = find(id);
+        if (User == null) {
             System.out.println("유저가 존재하지 않습니다.");
             return null;
         }
-        updateUser.update(username, email, phoneNumber);
-        return updateUser;
+        boolean Changed =
+                (name != null && !name.equals(User.getName())) ||
+                (email != null && !email.equals(User.getEmail())) ||
+                (phoneNumber != null && !phoneNumber.equals(User.getPhoneNumber()));
+        if (!Changed){
+            return null;
+
+        }
+        User.update(name, email, phoneNumber);
+        return User;
     }
 
-    @Override
-    public void delete(UUID id) {
+        @Override
+        public void delete (UUID id){
 
+        }
     }
-}
 
 
 
