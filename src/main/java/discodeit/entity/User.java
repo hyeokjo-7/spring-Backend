@@ -45,26 +45,17 @@ public class User {
     }
 
     public User update(String name, String email, String phoneNumber){
-        boolean changed = false;
         // null 값이 아닌 경우 매개 변수로 가져와 수정 후 리턴 (생성자 없음)
-        if (name != null) {
-            this.name = name;
-            changed = true;
-        }
-        if (email != null) {
-            this.email = email;
-            changed = true;
-        }
-        if (phoneNumber != null) {
-            this.phoneNumber = phoneNumber;
-            changed = true;
-        }
+        if (name != null) this.name = name;
+        if (email != null) this.email = email;
+        if (phoneNumber != null) this.phoneNumber = phoneNumber;
 
-        return changed;
+        return this;
     }
 
     @Override
     public String toString() {
+        // 다건 조회 병렬로 출력
         return "User{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +

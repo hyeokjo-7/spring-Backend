@@ -22,9 +22,16 @@ public class JavaApplication {
 
         List<User> users = userService.findAll();
         System.out.println("다건 조회: " + users);
-        // 실행 시 단건 조회라 수정
-        User update = userService.update(user.getId(),"정혁조", "dy960508@naver.com", "010-1234-5678");
-        System.out.println("수정된 유저: " + update);
+
+        User update = userService.update(user.getId(),"혁조", "dy960508@naver.com", "010-1234-5678");
+        if (update != null) {
+            System.out.println("수정된 유저: " + update);
+        } else {
+            System.out.println("변경된 값 또는 유저가 없습니다.");
+        }
+
+
+
     }
 }
 
